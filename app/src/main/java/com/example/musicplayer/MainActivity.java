@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
     }
     //connect to the service
     private ServiceConnection musicConnection = new ServiceConnection(){
-
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             MusicBinder binder = (MusicBinder)service;

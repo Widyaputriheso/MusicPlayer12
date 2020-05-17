@@ -4,8 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-
-import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.content.ContentResolver;
 import android.database.Cursor;
@@ -31,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
     private boolean musicBound=false;
     private MusicController controller;
     private boolean paused=false, playbackPaused=false;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayerContro
     public void getSongList() {
         ContentResolver musicResolver = getContentResolver();
         Uri musicUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
-        @SuppressLint("Recycle") Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
+        Cursor musicCursor = musicResolver.query(musicUri, null, null, null, null);
 
         if(musicCursor!=null && musicCursor.moveToFirst()){
             //get columns
